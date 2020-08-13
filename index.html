@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <script src="sketch.js" defer></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <style> 
+    body, html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    body { 
+      text-align: center; 
+      background-color: rgb(50,50,50);
+    }
+    #gameOptions {
+      margin: auto auto;
+      padding: 15px;
+
+      font-size: 18px;
+
+      display: flex;
+      flex-direction: row;
+
+      justify-content: center;
+      align-items: center;
+      
+      width: 80%;
+    }
+    #imgUrlInput {
+      flex-grow: 0.5;
+    }
+    #difficultyLabel {
+      color: white;
+    }
+
+    @media (max-width: 1000px) {
+      #gameOptions {
+        flex-direction: column;
+        width: 100%;
+        padding: 2px;
+
+        font-size: 30px;
+      }
+      #gameOptions > button {
+        width: 80%;
+      }
+      #imgUrlInput {
+        width: 80%;
+        flex-grow: unset;
+      }
+      #gameCanvas {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+    }
+    
+  </style>
+  </head>
+  <body>
+
+    <div id="gameOptions">
+      <input type="text" id="imgUrlInput" placeholder="Enter custom image URL here">
+      <button id="imgUrlBtn">Load image/Restart</button>
+      <button id="shuffleBtn">Shuffle board</button>
+      <label id="difficultyLabel">
+        Number of slices:
+        <input type="number" min=2 max=16 step=1 id="difficultyNum" value=3>
+      </label>
+    </div>
+
+    <!-- Game canvas goes here -->
+    <div id="gameCanvas"></div>
+    <div id="photoBtnDiv">
+      <button id="photoBtn1" onclick="quickloadImage(this)" data-src="https://images.pexels.com/photos/2830332/pexels-photo-2830332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600">Flower man</button>
+      <button id="photoBtn2" onclick="quickloadImage(this)" data-src="https://images.pexels.com/photos/2027045/pexels-photo-2027045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600">Car Engine</button>
+      <button id="photoBtn3" onclick="quickloadImage(this)" data-src="https://images.pexels.com/photos/827106/pexels-photo-827106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600">Pink flower</button>
+      <button id="photoBtn4" onclick="quickloadImage(this)" data-src="https://images.pexels.com/photos/4212599/pexels-photo-4212599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600">Dog</button>
+    </div>
+    
+  </body>
+</html>
