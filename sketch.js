@@ -218,7 +218,9 @@ document.getElementById("imgUrlBtn").onclick = function(){
     //Load image URL and run startGame()
 
     //TODO - Verify/Check URL and give feedback to the player
-    loadImage("https://cors-anywhere.herokuapp.com/"+document.getElementById("imgUrlInput").value, startGame);
+    //loadImage("https://cors-anywhere.herokuapp.com/"+document.getElementById("imgUrlInput").value, startGame);
+    
+    loadImage(document.getElementById("imgUrlInput").value, startGame);
 }
 
 document.getElementById("shuffleBtn").onclick = function(){
